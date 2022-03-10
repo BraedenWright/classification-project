@@ -30,7 +30,8 @@ def get_telco_data():
     df = pd.read_sql(query, url)
     df.to_csv(filename, index=False)
 
+
+    print('Pulling from SQL...')
     return df
 
 
-# Exercise 4 -- caching (done)
