@@ -1,6 +1,6 @@
 Project Goal
 ---------------------
-    The ultimate objective is to determine the main drivers behind churn for our customers, and then to build a model that will predict  future customer churn.
+The ultimate objective is to determine the main drivers behind churn for our customers, and then to build a model that will predict  future customer churn.
 
 
 
@@ -8,7 +8,7 @@ Project Description
 -------------------
 
 
-    With the implimentaion of 5G networks across the country and the recent increase of people working from home, it is important now more than ever that we provide satisfation to our customers to retain their business.  Here we will analyze our current customer base (with a focus on those whose churned) and determine what were some of the key factors in their depature from Telco. Furthermore we can find out how likely those factors were to contribute to a customer churning, thus giving us an idea of what measure we can take to keep those at risk customers from churning.
+With the implimentaion of 5G networks across the country and the recent increase of people working from home, it is important now more than ever that we provide satisfation to our customers to retain their business.  Here we will analyze our current customer base (with a focus on those whose churned) and determine what were some of the key factors in their depature from Telco. Furthermore we can find out how likely those factors were to contribute to a customer churning, thus giving us an idea of what measure we can take to keep those at risk customers from churning.
 
 
 
