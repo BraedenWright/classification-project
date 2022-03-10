@@ -13,7 +13,7 @@ def prep_telco(df):
     takes in the telco df and cleans the dataframe up for use. also changes total_charges from type(obj) to type(float)
     '''
     
-    df = df.drop(columns=['customer_id', 'payment_type_id', 'internet_service_type_id', 'contract_type_id'])
+    df = df.drop(columns=['payment_type_id', 'internet_service_type_id', 'contract_type_id'])
     df.total_charges = df.total_charges.replace(' ', 0).astype(float)
 
     cat_columns = ['gender', 'partner', 'dependents', 'phone_service', 'multiple_lines', 'online_security', 'online_backup', 'device_protection', 'tech_support', 'streaming_tv', 'streaming_movies', 'paperless_billing', 'churn', 'contract_type', 'internet_service_type', 'payment_type']
@@ -47,3 +47,44 @@ def train_validate_test_split(df):
                                   random_state=1313)
     
     return train, validate, test
+
+
+# other useful functions for metrics
+
+
+
+def get_metrics(tp, fn, fp, tn):
+    '''
+    This function takes the True Positive, False Negative, False Positive, and True Negatives from a confusion matrix and uses them to give us the metrics of the model used for the matrix.
+    '''
+    
+    accuracy = (tp + tn) / (tp + tn + fp + fn)
+    recall = tp / (tp + fn)
+    precision = tp / (tp + fp)
+    f1_score = (2 * (precision * recall) / (precision + recall))
+    true_pos = recall
+    true_neg = tn / (tn + fp)
+    false_pos = fp / (tn + fp)
+    false_neg = fn / (tp + fn)
+    support_pos = tp + fn
+    support_neg = tn + fp
+
+    print(f'Accuracy: {accuracy: .2%}')
+    print(f'---------------')
+    print(f'Recall: {recall: .2%}')
+    print(f'---------------')
+    print(f'Precision: {precision: .2%}')
+    print(f'---------------')
+    print(f'F1 Score: {f1_score: .2%}')
+    print(f'---------------')
+    print(f'True Positive Rate: {true_pos: .2%}')
+    print(f'---------------')
+    print(f'True Negative Rate: {true_neg: .2%}')
+    print(f'---------------')
+    print(f'False Positive Rate: {false_pos: .2%}')
+    print(f'---------------')
+    print(f'False Negative Rate: {false_neg: .2%}')
+    print(f'---------------')
+    print(f'Support (Did Not Survive(0)): {support_pos}')
+    print(f'---------------')
+    print(f'Support (Survived(1)): {support_neg}')
