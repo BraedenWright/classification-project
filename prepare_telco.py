@@ -42,9 +42,11 @@ def train_validate_test_split(df):
                                train_size = 0.8,
                                random_state=1313)
     
+    
     train, validate = train_test_split(train,
                                   train_size = 0.7,
                                   random_state=1313)
+    
     
     return train, validate, test
 
