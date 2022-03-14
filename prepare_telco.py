@@ -10,11 +10,12 @@ from sklearn.model_selection import train_test_split
 
 def prep_telco(df):
     '''
-    takes in the telco df and cleans the dataframe up for use. also changes total_charges from type(obj) to type(float)
+    Takes in the telco df and cleans the dataframe up for use. Also changes total_charges from type(obj) to type(float) and removes any accounts with a tenure of 0 to keep information relevant
     '''
     
     df = df.drop(columns=['payment_type_id', 'internet_service_type_id', 'contract_type_id'])
     df.total_charges = df.total_charges.replace(' ', 0).astype(float)
+    df = df[df.tenure != 0]
 
     cat_columns = ['gender', 'partner', 'dependents', 'phone_service', 'multiple_lines', 'online_security', 'online_backup', 'device_protection', 'tech_support', 'streaming_tv', 'streaming_movies', 'paperless_billing', 'churn', 'contract_type', 'internet_service_type', 'payment_type']
 
