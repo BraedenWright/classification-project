@@ -39,11 +39,39 @@ Initial Questions
 Data Dictionary
 ---------------------
 
-Your readme should include a data dictionary, which is important to provide in order to define and disambiguate each of the variables you are analyzing.
+Features
 
-For example:
-        Variable   | 	Meaning
-        -----------------------	
-        
+    churn
+    tenure
+    monthly_charges
+    total_charges
+    is_male
+    married
+    senior_citizen
+    children
+    phone_service
+    multiple_lines
+    online_security
+    online_backup
+    device_protection
+    tech_support
+    streaming_tv
+    streaming_movies
+    paperless_billing
+    one_year_contract
+    two_year_contract
+    fiber_optic
+    no_internet
+    card_auto_pay
+    electronic_check
+    mailed_check
 
+Dataframes
+
+    df = The main dataframe we will work with
+    telco_df = An unprepped copy of the original dataframe
+    df_customer_id = A prepped copy of the original df, used to create our prediction CSV
+    train = A sample of df, used to practice on different models
+    validate = A sample of df, used to verify on different models
+    test = A sample of df, ONLY USED ON BEST FITTING MODEL
 
